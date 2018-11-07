@@ -9,7 +9,7 @@
 </div>
 <br>
 <div>
-<%= link_to "add a review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
+<%= link_to "add a review", "#review_form", class: "btn btn-primary" %>
 </div>
 <br>
 <h3>
@@ -25,4 +25,12 @@ Reviews:
   </p>
 <% end %>
 </div>
+
+<h2 id="review_form" >Review <strong><%= @restaurant.name %></strong></h2>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :content, placeholder: "tell us about your experience here..." %>
+  <%= f.input :rating, placeholder: "out of 5" %>
+  <%= f.submit "submit review", class: "btn btn-primary" %>
+<% end %>
+
 
