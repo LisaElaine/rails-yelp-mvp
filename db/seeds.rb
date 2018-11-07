@@ -17,8 +17,8 @@ puts 'Creating restaurants...'
   Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address,
-    phone: Faker::PhoneNumber,
-    category: rand(%w[chinese italian japanese french belgian])
+    phone_number: Faker::PhoneNumber,
+    category: %w[chinese italian japanese french belgian].sample
   )
 end
 
