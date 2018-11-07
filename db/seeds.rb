@@ -16,7 +16,7 @@ puts 'Creating restaurants...'
 5.times do
   Restaurant.create!(
     name: Faker::Restaurant.name,
-    address: Faker::Address,
+    address: Faker::Address.street_address Faker::Address.city,
     phone_number: Faker::PhoneNumber,
     category: %w[chinese italian japanese french belgian].sample
   )
